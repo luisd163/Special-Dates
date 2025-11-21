@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="683.0" prefWidth="886.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uniquindio.edu.co.specialdates.controllers.MainController">
+   <children>
+      <Label layoutX="219.0" layoutY="14.0" text="IMPORTANT DATES" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Bold Italic" size="48.0" />
+         </font>
+      </Label>
+      <TableView fx:id="TableDates" layoutX="406.0" layoutY="128.0" prefHeight="442.0" prefWidth="447.0" style="-fx-background-color: white;">
+        <columns>
+          <TableColumn fx:id="tbl_columnDate" prefWidth="171.20001220703125" text="Date" />
+          <TableColumn fx:id="tbl_columnDescription" prefWidth="276.00006103515625" text="Description" />
+        </columns>
+      </TableView>
+      <Label layoutX="103.0" layoutY="128.0" text="Create Date" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Italic" size="36.0" />
+         </font>
+      </Label>
+      <Line endX="301.10003662109375" layoutX="444.0" layoutY="85.0" startX="-444.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7882353067398071" green="0.5803921818733215" blue="0.09019608050584793" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Line endX="-152.29998779296875" endY="1.52587890625E-5" layoutX="459.0" layoutY="178.0" startX="-444.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.7894737124443054" green="0.5798245668411255" blue="0.0906432718038559" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <Label layoutX="161.0" layoutY="202.0" prefHeight="20.0" prefWidth="51.0" text="Date" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtfDate" layoutX="63.0" layoutY="254.0" prefHeight="26.0" prefWidth="246.0" promptText="dd / mm / yy" />
+      <Label layoutX="128.0" layoutY="314.0" prefHeight="28.0" prefWidth="127.0" text="Description" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman Italic" size="24.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="txtaDescription" layoutX="63.0" layoutY="364.0" prefHeight="204.0" prefWidth="246.0" promptText="Give a description" />
+      <Button layoutX="63.0" layoutY="610.0" mnemonicParsing="false" onAction="#onCreate" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #000000 0.0%, #c99417 100.0%);" text="Create" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="506.0" layoutY="610.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="34.0" prefWidth="246.0" style="-fx-background-color: linear-gradient(from 0.0% 0.0% to 100.0% 100.0%, #000000 0.0%, #c99417 100.0%);" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
