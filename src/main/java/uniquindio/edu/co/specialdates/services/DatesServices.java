@@ -11,8 +11,6 @@ public class DatesServices implements IDatesRepo {
 
     private final Main main = PrincipalController.getInstance().getMain();
 
-    ArrayList<Date> dates = main.getDates();
-
     @Override
     public boolean createDate(String description, String date) throws Exception {
         if(description.isEmpty()) {
@@ -22,17 +20,20 @@ public class DatesServices implements IDatesRepo {
             throw new Exception("The date cannot be empty");
         }
         Date date1 = Date.builder()
-                .description(description)
                 .date(date)
+                .description(description)
                 .build();
 
+        ArrayList<Date> dates = main.getDates();
         dates.add(date1);
+        main.saveData(dates);
         return true;
 
     }
 
     @Override
     public boolean removeDate(Date date) throws Exception {
+        ArrayList<Date> dates = main.getDates();
         if(date == null) {
             throw new Exception("Select a date to remove");
         }
@@ -40,6 +41,7 @@ public class DatesServices implements IDatesRepo {
             throw new Exception("The date does not exist");
         }
         dates.remove(date);
+        main.saveData(dates);
         return true;
     }
 }

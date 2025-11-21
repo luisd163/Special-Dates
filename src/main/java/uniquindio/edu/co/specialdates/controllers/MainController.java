@@ -15,9 +15,10 @@ import uniquindio.edu.co.specialdates.services.DatesServices;
 
 public class MainController {
 
-    private ObservableList<Date> dates;
     private final Main main = PrincipalController.getInstance().getMain();
     private final DatesServices datesServices = new DatesServices();
+    private ObservableList<Date> dates;
+
 
     @FXML // ResourceBundle that was given to the FXMLLoader
     private ResourceBundle resources;
@@ -52,6 +53,7 @@ public class MainController {
             showAlertError("Error", e.getMessage());
         }
 
+        clean();
         refreshDates();
     }
 
@@ -105,6 +107,11 @@ public class MainController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    private void clean() {
+        txtfDate.clear();
+        txtaDescription.clear();
     }
 
 }

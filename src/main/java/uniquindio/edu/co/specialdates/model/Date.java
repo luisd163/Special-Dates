@@ -4,10 +4,12 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Builder @Getter @Setter
-public class Date {
-    String description;
+public class Date implements Serializable{
     String date;
+    String description;
 
     public Date(String date, String description) {
         this.date = date;

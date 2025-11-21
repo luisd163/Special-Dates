@@ -10,16 +10,16 @@ import uniquindio.edu.co.specialdates.model.Main;
 @Getter @Setter
 public class PrincipalController {
 
-    public static PrincipalController instancia;
+    public static PrincipalController instance;
     private final Main main = new Main();
 
     private PrincipalController(){}
 
     public static PrincipalController getInstance() {
-        if(instancia == null) {
-            instancia = new PrincipalController();
+        if(instance == null) {
+            instance = new PrincipalController();
         }
-        return instancia;
+        return instance;
     }
 
     public void closeWindow(Node node){
